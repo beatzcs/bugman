@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/welcome.css'/>
+    <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="title">
+    <p><%= title %></p>
+    <p><%= second %></p>
+</div>
+
+<p class="bottom">Hey,</p>
+<div class="bb">
+    <p class="old">旧爱</p>
+    <p class="line"></p>
+    <p class="new">新欢</p>
+</div>
+
+<div class="cover">
+    <div class="cover-view">
+        <p class="nick">你好</p>
+        <form>
+            <div class="content">
+                <div>
+                    <span>你的名字</span>
+                    <input placeholder="君の名は"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".cover").hide();
+        $(".old").click(function () {
+            $(".cover").show();
+            if (!$(".cover").hidden) {
+                $(".nick").text("你好，旧爱");
+            }
+        });
+        $(".new").click(function () {
+            $(".cover").show();
+            if (!$(".cover").hidden) {
+                $(".nick").text("你好，新欢");
+            }
+        });
+    })
+</script>
+</body>
+</html>

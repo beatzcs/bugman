@@ -1,2 +1,0 @@
-# bugman
-a personal website.

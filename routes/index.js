@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET index listing. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Nice to see you!', second: 'Here is Mr Zhong\'s kingdom.'});
+    // res.send('respond with a resource');
+    res.render("index", {});
 });
 
 module.exports = router;

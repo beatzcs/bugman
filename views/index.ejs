@@ -1,51 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/welcome.css'/>
+    <meta charset="UTF-8">
+    <title>Mr Zhong</title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
     <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-<div class="title">
-    <p><%= title %></p>
-    <p><%= second %></p>
-</div>
+<header>
+    <img class="headimg" src="/images/headimg.png">
+    <h2>Mr Zhong</h2>
+    <nav id="nav">
+        <ul>
+            <li class="current"><a href="#">首页</a></li>
+            <li><a href="#">活动</a></li>
+            <li><a href="#">话题</a></li>
+            <li><a href="#">社区</a></li>
+        </ul>
+    </nav>
+</header>
 
-<p class="bottom">Hey,</p>
-<div class="bb">
-    <p class="old">旧爱</p>
-    <p class="line"></p>
-    <p class="new">新欢</p>
-</div>
-
-<div class="cover">
-    <div class="cover-view">
-        <p class="nick">你好</p>
-        <form>
-            <div class="content">
-                <div>
-                    <span>你的名字</span>
-                    <input placeholder="君の名は"/>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $(".cover").hide();
-        $(".old").click(function () {
-            $(".cover").show();
-            if (!$(".cover").hidden) {
-                $(".nick").text("你好，旧爱");
-            }
-        });
-        $(".new").click(function () {
-            $(".cover").show();
-            if (!$(".cover").hidden) {
-                $(".nick").text("你好，新欢");
-            }
-        });
+    $("#nav ul li").click(function () {
+        $("#nav ul li").eq($(this).index()).addClass("current").siblings().removeClass("current");
     })
 </script>
 </body>

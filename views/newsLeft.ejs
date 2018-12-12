@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻频道</title>
+    <link rel="stylesheet" href="/stylesheets/newsLeft.css">
+    <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<section class="news-list">
+    <% newsList.forEach(function (item) { %>
+        <a href="<%= item.url %>">
+            <article class="item">
+                <% if (item.thumbnail_pic_s03){ %>
+                    <div class="container">
+                        <img class='photo' src="<%= item.thumbnail_pic_s %>" alt="">
+                        <img class='photo' src="<%= item.thumbnail_pic_s02 %>" alt="">
+                        <img class='photo' src="<%= item.thumbnail_pic_s03 %>" alt="">
+                    </div>
+                <% }else if (item.thumbnail_pic_s02) { %>
+                    <div class="container">
+                        <img class='photo2' src="<%= item.thumbnail_pic_s %>" alt="">
+                        <img class='photo2' src="<%= item.thumbnail_pic_s02 %>" alt="">
+                    </div>
+                <% }else { %>
+                    <div class="container">
+                        <img src="<%= item.thumbnail_pic_s %>" alt="">
+                    </div>
+                <% } %>
+                <header>
+                    <h3><%= item.title %></h3>
+                    <p>
+                        <time pubdate datetime="2009-10-10T19:10-08:00"><%= item.date %></time>
+                    </p>
+                    <p>
+                        <span>来源：<%= item.author_name %></span>
+                    </p>
+                    <div class="corner"></div>
+                    <span class="category"><%= item.category %></span>
+                </header>
+            </article>
+        </a>
+    <% }) %>
+</section>
+
+</body>
+</html>

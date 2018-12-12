@@ -1,0 +1,37 @@
+#left {
+    width: calc(100% - 150px);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*右侧导航栏*/
+#sidebar {
+    width: 120px;
+    position: fixed;
+    right: 30px;
+    top: 25%;
+    text-align: center;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar ul li {
+    padding: 10px 0px;
+}
+
+#sidebar ul li a {
+    font-family: sans-serif, "隶书", "宋体", "仿宋";
+    font-size: 20px;
+}
+
+#sidebar ul li a:hover {
+    color: #55AAFF;
+}
+
+#sidebar .curr a {
+    color: #00ADEF;
+}

@@ -7,9 +7,11 @@
     <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-<header>
-    <img class="headimg" src="/images/headimg.png">
-    <h2>Mr Zhong</h2>
+<header id="header-top">
+    <div class="info">
+        <h2>Mr Zhong</h2>
+        <img class="headimg" src="/images/headimg.png"/>
+    </div>
     <nav id="nav">
         <ul>
             <li class="current"><a href="#">首页</a></li>
@@ -20,10 +22,21 @@
     </nav>
 </header>
 
+<div id="content"></div>
+
+<footer>
+    <p>welcome to visit.</p>
+</footer>
+
 <script type="text/javascript">
-    $("#nav ul li").click(function () {
-        $("#nav ul li").eq($(this).index()).addClass("current").siblings().removeClass("current");
+    $(document).ready(function () {
+        $("#content").load("./page2");
     })
+    $("#nav ul li").click(function () {
+        console.log("index == " + ($(this).index() + 1));
+        $("#nav ul li").eq($(this).index()).addClass("current").siblings().removeClass("current");
+        $("#content").load("./page" + ($(this).index() + 1));
+    });
 </script>
 </body>
 </html>

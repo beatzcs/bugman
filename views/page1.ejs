@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>每日热点</title>
+    <script type="text/javascript" src="/javascripts/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/page1.css">
+</head>
+<body>
+
+<div id="left"></div>
+
+<!--shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)-->
+<aside id="sidebar">
+    <ul>
+        <li class="curr"><a href="#">头条</a></li>
+        <li><a href="#">社会</a></li>
+        <li><a href="#">国内</a></li>
+        <li><a href="#">国际</a></li>
+        <li><a href="#">娱乐</a></li>
+        <li><a href="#">体育</a></li>
+        <li><a href="#">军事</a></li>
+        <li><a href="#">科技</a></li>
+        <li><a href="#">财经</a></li>
+        <li><a href="#">时尚</a></li>
+    </ul>
+</aside>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#left").load("./newsLeft?type=top");
+    })
+
+    $("#sidebar ul li").click(function () {
+        $("#sidebar ul li").eq($(this).index()).addClass("curr").siblings().removeClass("curr");
+        var list = ["top", "shehui", "guonei", "guoji", "yule", "tiyu", "junshi", "keji", "caijing", "shishang"];
+        $("#left").load("./newsLeft?type=" + list[$(this).index()]);
+    });
+</script>
+</body>
+</html>

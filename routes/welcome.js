@@ -6,4 +6,8 @@ router.get('/', function (req, res, next) {
     res.render('welcome', {title: 'Nice to see you!', second: 'Here is Mr Zhong\'s kingdom.'});
 });
 
+// router.post('/', function (req, res, next) {
+//     res.send(200);
+// });
+
 module.exports = router;

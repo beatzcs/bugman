@@ -33,6 +33,11 @@
             ], 50);
         }
     </script>
+    <script type="text/javascript">
+        function login() {
+            window.location.href = './index';
+        }
+    </script>
 </head>
 
 <body onLoad="demo();">
@@ -5969,15 +5974,15 @@ JX9jGKmqdwAgrojpmWKASGq2nmZKJ0sIwlicxwtvPxnUzdy/dBwoH2usBa7v3UsLhAsH/9k="/>
 
 <div id="login">
     <h1>Login</h1>
-    <form method="post">
-        <input type="text" required="required" placeholder="用户名" name="nickname"/>
-        <input type="password" required="required" placeholder="密码" name="password"/>
-        <button class="but" type="submit">登录</button>
-        <div class="noob">
-            <a class="forget" href="/">忘记密码？</a>
-            <a class="reset" href="/">立即注册</a>
-        </div>
-    </form>
+    <!--<form>-->
+    <input type="text" required="required" value="" placeholder="用户名" name="nickname"/>
+    <input type="password" required="required" value="" placeholder="密码" name="password"/>
+    <button class="but" onclick="login();">登录</button>
+    <div class="noob">
+        <a class="forget" href="/">忘记密码？</a>
+        <a class="reset" href="/">立即注册</a>
+    </div>
+    <!--</form>-->
 </div>
 
 <footer>
